@@ -8,10 +8,10 @@ const botoes = document.querySelectorAll('.app__card-button')
 const startPauseBt = document.querySelector('#start-pause')
 const iniciarOuPausarBt = document.querySelector('#start-pause span')
 const musicaFocoInput = document.querySelector('#alternar-musica')
-const musica = new Audio('/sons/luna-rise-part-one.mp3')
-const somStart = new Audio('/sons/play.wav')
-const somPause = new Audio('/sons/pause.mp3')
-const somFinish = new Audio('/sons/beep.mp3')
+const musica = new Audio('./sons/luna-rise-part-one.mp3')
+const somStart = new Audio('./sons/play.wav')
+const somPause = new Audio('./sons/pause.mp3')
+const somFinish = new Audio('./sons/beep.mp3')
 const tempoNaTela = document.querySelector('#timer')
 
 const iconeBotao = document.querySelector('.app__card-primary-butto-icon')
@@ -52,7 +52,7 @@ function alterarContexto(contexto) {
     mostrarTempo()
     botoes.forEach(botao => botao.classList.remove('active'))
     html.setAttribute('data-contexto', contexto);
-    banner.setAttribute('src', `/imagens/${contexto}.png`)
+    banner.setAttribute('src', `./imagens/${contexto}.png`)
     switch (contexto) {
         case 'foco':
             titulo.innerHTML = 'Otimize sua produtividade,<br><strong class="app__title-strong">mergulhe no que importa.</strong>'
@@ -73,7 +73,7 @@ const contagemRegressiva = () => {
 
         somFinish.play()
         somFinish.volume = 0.09
-        iconeBotao.setAttribute('src', '/imagens/play_arrow.png')
+        iconeBotao.setAttribute('src', './imagens/play_arrow.png')
 
         setTimeout(() => {
         alert('Tempo finalizado!')
@@ -92,7 +92,7 @@ function iniciarOuPausar() {
         somPause.play()
         somPause.volume = 0.09
         zerar()
-        iconeBotao.setAttribute('src', '/imagens/play_arrow.png')
+        iconeBotao.setAttribute('src', './imagens/play_arrow.png')
 
         return  
     }
@@ -101,7 +101,7 @@ function iniciarOuPausar() {
     somStart.volume = 0.09
     intervaloId = setInterval(contagemRegressiva, 1000)
     iniciarOuPausarBt.textContent = "Pausar"
-    iconeBotao.setAttribute('src', '/imagens/pause.png')
+    iconeBotao.setAttribute('src', '/.imagens/pause.png')
     
 }
 
