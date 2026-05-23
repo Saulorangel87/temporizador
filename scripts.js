@@ -101,7 +101,7 @@ function iniciarOuPausar() {
     somStart.volume = 0.09
     intervaloId = setInterval(contagemRegressiva, 1000)
     iniciarOuPausarBt.textContent = "Pausar"
-    iconeBotao.setAttribute('src', '/.imagens/pause.png')
+    iconeBotao.setAttribute('src', './imagens/pause.png')
     
 }
 
