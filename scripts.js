@@ -69,8 +69,13 @@ function alterarContexto(contexto) {
 
 const contagemRegressiva = () => {
     if (tempoDecorridoEmSegundos <= 0) {
+        const focoAtivo = html.getAttribute('data-contexto') === 'foco'
+        if (focoAtivo) {
+            const evento = new CustomEvent('focoFinalizado')
+            document.dispatchEvent(evento)
+        }
         zerar()
-
+        
         somFinish.play()
         somFinish.volume = 0.09
         iconeBotao.setAttribute('src', './imagens/play_arrow.png')
