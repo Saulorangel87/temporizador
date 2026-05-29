@@ -2,6 +2,7 @@ const btnAdicionarTarefa = document.querySelector('.app__button--add-task')
 const formAdicionarTarefa = document.querySelector('.app__form-add-task')
 const textarea = document. querySelector('.app__form-add-task textarea')
 const ulTarefas = document.querySelector('.app__section-task-list')
+const btnCancelar = document.querySelector('.app__form-footer__button--cancel')
 
 const tarefas = JSON.parse(localStorage.getItem('tarefas')) || []
 
@@ -40,7 +41,7 @@ function criarElementoTarefa(tarefa) {
 
 
     const imagemBotao = document.createElement('img')
-    imagemBotao.setAttribute('src', '/imagens/edit.png')
+    imagemBotao.setAttribute('src', './imagens/edit.png')
 
     botao.append(imagemBotao)
 
@@ -73,3 +74,10 @@ tarefas.forEach(tarefa => {
     const elementoTarefa = criarElementoTarefa(tarefa)
     ulTarefas.append(elementoTarefa)
 })
+
+const LimparFormulario = () => {
+    textarea.value = ''
+    formAdicionarTarefa.classList.add('hidden')
+}
+
+btnCancelar.addEventListener('click', LimparFormulario)
