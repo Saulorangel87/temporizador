@@ -16,7 +16,7 @@ const tempoNaTela = document.querySelector('#timer')
 
 const iconeBotao = document.querySelector('.app__card-primary-butto-icon')
 
-let tempoDecorridoEmSegundos = 15
+let tempoDecorridoEmSegundos = 1500
 let intervaloId = null
 
 musica.loop = true
